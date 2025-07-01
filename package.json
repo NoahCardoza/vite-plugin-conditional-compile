@@ -66,6 +66,6 @@
   },
   "dependencies": {
     "@ampproject/remapping": "^2.2.1",
-    "unplugin-preprocessor-directives": "github:NoahCardoza/unplugin-preprocessor-directives#e6584233bb32acca523c7ffb874f58d7789e700d"
+    "unplugin-preprocessor-directives": "github:NoahCardoza/unplugin-preprocessor-directives#2f64e37096eec2c0e638eca4e6d0ea6eb4e3b3bd"
   }
 }

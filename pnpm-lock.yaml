@@ -9,8 +9,8 @@ dependencies:
     specifier: ^2.2.1
     version: 2.2.1
   unplugin-preprocessor-directives:
-    specifier: github:NoahCardoza/unplugin-preprocessor-directives#e6584233bb32acca523c7ffb874f58d7789e700d
-    version: github.com/NoahCardoza/unplugin-preprocessor-directives/e6584233bb32acca523c7ffb874f58d7789e700d(rollup@3.29.4)(vite@5.0.12)
+    specifier: github:NoahCardoza/unplugin-preprocessor-directives#2f64e37096eec2c0e638eca4e6d0ea6eb4e3b3bd
+    version: github.com/NoahCardoza/unplugin-preprocessor-directives/2f64e37096eec2c0e638eca4e6d0ea6eb4e3b3bd(rollup@3.29.4)(vite@5.0.12)
 
 devDependencies:
   '@types/fs-extra':
@@ -2676,9 +2676,9 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  github.com/NoahCardoza/unplugin-preprocessor-directives/e6584233bb32acca523c7ffb874f58d7789e700d(rollup@3.29.4)(vite@5.0.12):
-    resolution: {tarball: https://codeload.github.com/NoahCardoza/unplugin-preprocessor-directives/tar.gz/e6584233bb32acca523c7ffb874f58d7789e700d}
-    id: github.com/NoahCardoza/unplugin-preprocessor-directives/e6584233bb32acca523c7ffb874f58d7789e700d
+  github.com/NoahCardoza/unplugin-preprocessor-directives/2f64e37096eec2c0e638eca4e6d0ea6eb4e3b3bd(rollup@3.29.4)(vite@5.0.12):
+    resolution: {tarball: https://codeload.github.com/NoahCardoza/unplugin-preprocessor-directives/tar.gz/2f64e37096eec2c0e638eca4e6d0ea6eb4e3b3bd}
+    id: github.com/NoahCardoza/unplugin-preprocessor-directives/2f64e37096eec2c0e638eca4e6d0ea6eb4e3b3bd
     name: unplugin-preprocessor-directives
     version: 1.0.3
     peerDependencies:
