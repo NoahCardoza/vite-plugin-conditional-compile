@@ -27,6 +27,8 @@ const vIfDirective = defineDirective<VIfToken, VIfStatement>((context) => {
           consequent: [],
           alternate: [],
           kind: token.type,
+          start: token.start,
+          end: token.end,
         }
         this.current++
 
@@ -35,14 +37,19 @@ const vIfDirective = defineDirective<VIfToken, VIfStatement>((context) => {
 
           if (nextToken.type === 'elif' || nextToken.type === 'else') {
             node.alternate.push(this.walk())
+            node.end = Math.max(node.end || Number.NEGATIVE_INFINITY, ...node.alternate.map(n => n.end || Number.NEGATIVE_INFINITY))
+
             break
           }
           else if (nextToken.type === 'endif') {
+            node.end = nextToken.end
             this.current++ // Skip 'endif'
             break
           }
           else {
             node.consequent.push(this.walk())
+            node.end = Math.max(node.end || Number.NEGATIVE_INFINITY, ...node.consequent.map(n => n.end || Number.NEGATIVE_INFINITY))
+
           }
         }
         return node
@@ -54,12 +61,18 @@ const vIfDirective = defineDirective<VIfToken, VIfStatement>((context) => {
           return {
             type: 'Program',
             body: node.consequent.map(this.walk.bind(this)).filter(n => n != null),
+            replace: true,
+            start: node.start,
+            end: node.end,
           }
         }
         else if (node.alternate) {
           return {
             type: 'Program',
             body: node.alternate.map(this.walk.bind(this)).filter(n => n != null),
+            replace: true,
+            start: node.start,
+            end: node.end,
           }
         }
       }
