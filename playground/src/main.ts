@@ -67,3 +67,16 @@ render("Conditional: !DEV=true||PROD=true else");
 // #v-ifdef (DEV!=true||PROD=true)
 render("Conditional: n DEV!=true||PROD=true");
 // #v-endif
+
+
+// #v-ifdef DEV
+// @ts-expect-error
+const buttonEl = document.createElement("button");
+buttonEl.innerText = "Click To Test Sourcemap";
+buttonEl.onclick = () => {
+  debugger;
+};
+
+// @ts-expect-error
+document.body.appendChild(buttonEl);
+// #v-endif
